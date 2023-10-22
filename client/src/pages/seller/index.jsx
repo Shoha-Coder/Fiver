@@ -19,17 +19,16 @@ function Index() {
       if (response.status === 200) {
         setDashboardData(response.data.dashboardData);
       }
-      console.log({ response });
     };
     if (userInfo) {
       getBuyerDashboardData();
     }
   }, [userInfo]);
   return (
-    <>
+    <div className="w-[100%]">
       {userInfo && (
-        <div className="flex min-h-[80vh] my-10 mt-0 px-32 gap-5">
-          <div className="shadow-md h-max p-10 flex flex-col gap-5 min-w-96 w-96">
+        <div className="grid p200:grid-cols-1 w-[90%] p200:w mx-auto maxn:grid-cols-2 p200:gap-10 min-h-[80vh] my-10 mt-0 gap-5">
+          <div className="shadow-md h-max p-10 flex flex-col gap-5">,
             <div className="flex gap-5 justify-center items-center">
               <div>
                 {userInfo?.imageName ? (
@@ -60,7 +59,7 @@ function Index() {
             </div>
           </div>
           <div>
-            <div className="grid grid-cols-3 gap-10 w-full">
+            <div className="grid p200:grid-cols-1 p550:grid-cols-2 p800:grid-cols-3 p200:text-center gap-10 w-full">
               <div
                 className="shadow-md h-max p-10 flex flex-col gap-2 cursor-pointer hover:shadow-xl transition-all duration-300"
                 onClick={() => router.push("/seller/gigs")}
@@ -111,7 +110,7 @@ function Index() {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
 

@@ -19,7 +19,6 @@ const Index = () => {
       <Everything />
       <Services />
       <FiverrBusiness />
-      <JoinFiverr />
       {(showLoginModal || showSignupModal) && (
         <AuthWrapper type={showLoginModal ? "login" : "signup"} />
       )}

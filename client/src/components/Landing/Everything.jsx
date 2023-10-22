@@ -25,10 +25,10 @@ function Everything() {
         },
     ];
     return (
-        <div className="bg-[#f1fdf7] flex py-20 justify-between px-24">
+        <div className="bg-[#f1fdf7] flex py-20 justify-between p200:justify-center p200:pl-[90px]">
             <div>
                 <h2 className="text-4xl mb-5 text-[#404145] font-bold">
-                    The best part? Everything.
+                    The best part? Everything   
                 </h2>
                 <ul className="flex flex-col gap-10">
                     {everythingData.map(({ title, subtitle }) => {
@@ -44,7 +44,7 @@ function Everything() {
                     })}
                 </ul>
             </div>
-            <div className="relative h-96 w-2/4">
+            <div className="relative h-96 w-2/4 p200:opacity-0">
                 <Image src="/everything.webp" objectFit="contain" width={700} height={250} alt="everything" />
             </div>
         </div>

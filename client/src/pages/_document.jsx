@@ -13,9 +13,9 @@ export default function Document() {
               `,
         }} />
       </Head>
-      <body className='p200:min-w-full'>
+      <body className={`p200:min-w-[800px]`}>
         <Main />
-        <NextScript />  
+        <NextScript />
       </body>
     </Html>
   )

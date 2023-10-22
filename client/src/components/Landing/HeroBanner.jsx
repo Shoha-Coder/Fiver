@@ -16,52 +16,52 @@ function HeroBanner() {
 
     return (
         <div className="h-[680px] relative bg-cover">
-            <div className="absolute top-0 right-0 w-[110vw] h-full transition-opacity z-0">
+            <div className="absolute top-0 right-0 w-[100%] h-full transition-opacity z-0">
                 <Image
                     alt="hero"
                     src="/bg-hero1.webp"
                     fill
                     className={`${image === 1 ? "opacity-100" : "opacity-0"
-                        } transition-all duration-1000 img object-cover object-top`}
+                        } transition-all duration-1000 img object-cover p200:object-[-750px] minn:object-[-500px] p1288:object-[-300px] maxn:object-top absolute`}
                 />
                 <Image
                     alt="hero"
                     src="/bg-hero2.webp"
                     fill
                     className={`${image === 2 ? "opacity-100" : "opacity-0"
-                        } transition-all duration-1000 img object-cover object-top`}
+                        } transition-all duration-1000 img object-cover p200:object-[-750px] minn:object-[-500px] p1288:object-[-300px] maxn:object-top absolute`}
                 />
                 <Image
                     alt="hero"
                     src="/bg-hero3.webp"
                     fill
                     className={`${image === 3 ? "opacity-100" : "opacity-0"
-                        } transition-all duration-1000 img object-cover object-top`}
+                        } transition-all duration-1000 img object-cover p200:object-[-750px] minn:object-[-500px] p1288:object-[-300px] maxn:object-top absolute`}
                 />
                 <Image
                     alt="hero"
                     src="/bg-hero4.webp"
                     fill
                     className={`${image === 4 ? "opacity-100" : "opacity-0"
-                        } transition-all duration-1000 img object-cover object-top`}
+                        } transition-all duration-1000 img object-cover p200:object-[-750px] minn:object-[-500px] p1288:object-[-300px] maxn:object-top absolute`}
                 />
                 <Image
                     alt="hero"
                     src="/bg-hero5.webp"
                     fill
                     className={`${image === 5 ? "opacity-100" : "opacity-0"
-                        } transition-all duration-1000 img object-cover object-top`}
+                        } transition-all duration-1000 img object-cover p200:object-[-750px] minn:object-[-500px] p1288:object-[-300px] maxn:object-top absolute`}
                 />
                 <Image
                     alt="hero"
                     src="/bg-hero6.webp"
                     fill
                     className={`${image === 6 ? "opacity-100" : "opacity-0"
-                        } transition-all duration-1000 img object-cover object-top`}
+                        } transition-all duration-1000 img object-cover p200:object-[-750px] minn:object-[-500px] p1288:object-[-300px] maxn:object-top absolute`}
                 />
             </div>
-            <div className="z-10 relative w-[650px] flex justify-center flex-col h-full gap-5 ml-20">
-                <h1 className="text-white text-5xl leading-snug">
+            <div className="z-10 relative p200:mx-auto minn:left-[-190px] p200:top-[160px] minn:top-0 maxn:left-[-340px] w-[650px] flex justify-center flex-col h-full gap-5 ml-20">
+                <h1 className="p200:opacity-0 minn:opacity-100 text-white text-5xl leading-snug">
                     Find the perfect&nbsp;
                     <i>freelance</i>
                     <br />

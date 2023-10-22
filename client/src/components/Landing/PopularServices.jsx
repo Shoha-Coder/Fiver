@@ -31,8 +31,8 @@ function PopularServices() {
         { name: "Translation", label: "Go global", image: "/service8.jpeg" },
     ];
     return (
-        <div className="mx-20 my-16">
-            <h2 className="text-4xl mb-10 text-[#404145] font-bold p200:ml-[30px]">
+        <div className=" my-16">
+            <h2 className="text-4xl mb-10 text-[#404145] font-bold p200:ml-[30px] p200:text-center">
                 Popular Services
             </h2>
             <ul className="flex flex-wrap gap-16 justify-center">

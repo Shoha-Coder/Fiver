@@ -42,7 +42,7 @@ function FiverrBusiness() {
                 </button>
             </div>
             <div className="relative h-[512px] w-2/3">
-                <Image src="/business.webp" objectFit="contain" width={900} className="mintf:opacity-0" height={250} alt="bsiness" />
+                <Image src="/business.webp" objectFit="contain" width={900} className="p200:opacity-0  p1150:opacity-100 p1150:mt-[90px] p1396:mt-0" height={250} alt="bsiness" />
             </div>
         </div>
     );

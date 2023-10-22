@@ -25,30 +25,19 @@ function Search() {
   return (
     <>
       {gigs && (
-        <div className="mx-24 mb-24">
+        <div className="mx-24 mr-14 mb-24">
           {q && (
             <h3 className="text-4xl mb-10">
               Results for <strong>{q}</strong>
             </h3>
           )}
-          <div className="flex gap-4">
-            <button className="py-3 px-5 border border-gray-400 rounded-lg font-medium">
-              Category
-            </button>
-            <button className="py-3 px-5 border border-gray-400 rounded-lg font-medium">
-              Budget
-            </button>
-            <button className="py-3 px-5 border border-gray-400 rounded-lg font-medium">
-              Delivery Time
-            </button>
-          </div>
           <div>
             <div className="my-4">
               <span className="text-[#74767e] font-medium ">
                 {gigs.length} services available
               </span>
             </div>
-            <div className="grid grid-cols-4">
+            <div className="p200:grid p200:grid-cols-2 p922:grid-cols-3 p200:gap-5 p1200:grid-cols-4 p1600:grid-cols-5">
               {gigs.map((gig) => (
                 <SearchGridItem gig={gig} key={gig.id} />
               ))}

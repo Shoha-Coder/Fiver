@@ -47,7 +47,7 @@ function  GigsPage() {
     }
   }, [dispatch, gigId, userInfo]);
   return (
-    <div className="grid grid-cols-3 mx-32 gap-20">
+    <div className="grid p200:grid-cols-2 p1182:grid-cols-3 mx-32 gap-20">
       <Details />
       <Pricing />
     </div>

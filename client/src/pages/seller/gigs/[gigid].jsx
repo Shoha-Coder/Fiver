@@ -261,7 +261,7 @@ const GigId = () => {
                     </div>
                 </div>
                 <button
-                    className="border text-lg font-semibold px-5 py-3 border-[#1dbf73] bg-[#1dbf73] text-white rounded-md w-full"
+                    className="border text-lg font-semibold px-5 py-3 border-[#1dbf73] bg-[#1dbf73] text-white rounded-md"
                     type="button"
                     onClick={editGig}
                 >

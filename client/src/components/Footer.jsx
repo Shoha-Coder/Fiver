@@ -9,6 +9,8 @@ import {
 } from "react-icons/fi";
 import FiverrLogo from "./FiverrLogo";
 import { categories } from "@/utils/categories";
+import { useRouter } from "next/router";
+import {userInfo} from "os";
 
 function Footer() {
     const socialLinks = [
@@ -57,15 +59,6 @@ function Footer() {
             ],
         },
         {
-            headerName: "Support",
-            links: [
-                { name: "Help & Support", link: "#" },
-                { name: "Trust & Safety", link: "#" },
-                { name: "Selling on Fiverr", link: "#" },
-                { name: "Buying on Fiverr", link: "#" },
-            ],
-        },
-        {
             headerName: "Community",
             links: [
                 { name: "Community Success Stories", link: "#" },
@@ -96,13 +89,23 @@ function Footer() {
                 { name: "Working Not Working", link: "#" },
             ],
         },
+        {
+            headerName: "Support",
+            links: [
+                { name: "Help & Support", link: "#" },
+                { name: "Trust & Safety", link: "#" },
+                { name: "Selling on Fiverr", link: "#" },
+                { name: "Buying on Fiverr", link: "#" },
+            ],
+        },
     ];
+    const router = useRouter()
     return (
-        <footer className="w-full mx-auto px-4 sm:px-8 md:px-16 py-16 border-t border-gray-200 bg-gray-100">
-            <div className="flex flex-col md:flex-row">
+        <footer className={`w-full mx-auto px-4 py-16 border-t border-gray-200 bg-gray-200 ${router.pathname === "/profile" ? "opacity-0" : ""}`}>
+            <div className={`w-full justify-evenly p200:grid p200:grid-cols-3 p200:gap-5 p200:pl-[50px] minn:grid-cols-4 p1150:grid-cols-5 ${router.pathname === "/seller" ? "p200:grid-cols-2" : ""}`}>
                 {data.map(({ headerName, links }) => {
                     return (
-                        <div key={headerName} className="flex flex-col gap-2 md:w-1/5">
+                        <div key={headerName} className="flex flex-col gap-2">
                             <span className="font-bold">{headerName}</span>
                             <ul className="flex flex-col gap-2">
                                 {links.map(({ name, link }) => (

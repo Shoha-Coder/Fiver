@@ -97,7 +97,7 @@ const profile = () => {
         <>
             {
                 isLoaded && (
-                    <div className='flex flex-col items-center justify-start min-h-[80vh] gap-3'>
+                    <div className='flex flex-col items-center justify-start min-h-[90vh] gap-3'>
                         {errorMessage && (
                             <div>
                                 <span className="text-red-600 font-bold">{errorMessage}</span>

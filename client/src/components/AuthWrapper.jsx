@@ -43,21 +43,13 @@ const AuthWrapper = ({ type }) => {
     }
   }
   return (
-    <div className='fixed top-0 z-[100] rounded-sm'>
+    <div className='fixed top-0 z-[100] rounded-sm min-w-full left-0 right-0 bottom-0'>
       <div className="h-[100] w-[100] backdrop-blur-md fixed top-0 -z-[1]" id='blur-div'>
         <div className='h-[100vh] w-[100vw] flex flex-col justify-center items-center'>
           <div className="fixed z-[101] h-max bg-white flex flex-col justify-center items-center rounded-md" id='auth modal'>
             <div className="flex flex-col justify-center items-center p-8 gap-7">
               <div className="flex items-center h-[40px] justify-between " >
                 <h3 className='text-2xl font-semibold to-slate-700'>{type === "login" ? "Login To Fiverr" : "Signup to Fiverr"}</h3>
-                {/* <IoCloseCircle onClick={() => {
-                  dispatch({
-                    type: reducerCases.TOGGLE_LOGIN_MODAL, showSignupModal: false
-                  })
-                  dispatch({
-                    type: reducerCases.TOGGLE_SIGNUP_MODAL, showLoginModal: false
-                  })
-                }} /> */}
               </div>
               <div className='flex flex-col gap-5'>
               </div>
@@ -88,7 +80,7 @@ const AuthWrapper = ({ type }) => {
                 {type === "login" ?
                   (
                     <>
-                      Not A Memeber Yet ? {" "}
+                      Not A Member Yet ? {" "}
                       <span
                         className='text-[#1dbf73] cursor-pointer'
                         onClick={() => {

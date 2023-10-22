@@ -43,19 +43,19 @@ function UnreadMessages() {
         <table className="w-full text-sm text-left text-gray-500">
           <thead className="text-xs text-gray-500 uppercase bg-gray-50">
             <tr>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="p200:px-2 p899:px-6 py-3">
                 Text
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="p200:px-2 p899:px-6 py-3">
                 Sender Name
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="p200:px-2 p899:px-6 py-3">
                 Order Id
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="p200:px-2 p899:px-6 py-3">
                 Mark as Read
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="p200:px-2 p899:px-6 py-3">
                 View Conversation
               </th>
             </tr>
@@ -68,7 +68,8 @@ function UnreadMessages() {
                   key={message.text}
                 >
                   <th scope="row" className="px-6 py-4 ">
-                    {message?.text}
+                    {message?.text?.substring(0, 5  )}
+                    {message.text.length >= 5 ? "..." : ""}
                   </th>
                   <th scope="row" className="px-6 py-4 ">
                     {message?.sender?.fullName}

@@ -100,21 +100,7 @@ const Navbar = () => {
             setIsLoaded(true)
         }
     }, [cookies, userInfo])
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 0) {
-                setIsFixed(true);
-            } else {
-                setIsFixed(false);
-            }
-        };
 
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
     const handleOrdersNavigate = () => {
         if (isSeller) router.push("/seller/orders");
         router.push("/buyer/orders")
@@ -135,24 +121,24 @@ const Navbar = () => {
                 <nav
                     className={`w-full px-4 flex justify-between items-center py-4 top-0 z-30 transition-all duration-300 ${isFixed || userInfo
                         ? 'fixed bg-white border-b border-gray-200'
-                        : 'absolute bg-transparent border-transparent'
+                        : ''
                         }`}
                 >
                     <div>
                         <Link href="/">
-                            <FiverrLogo fillColor={!isFixed && !userInfo ? '#ffffff' : '#404145'} />
+                            <FiverrLogo fillColor={!isFixed && !userInfo ? '#404145' : '#404145'} />
                         </Link>
                     </div>
                     <div className={`flex ${isFixed || userInfo ? 'opacity-100' : 'opacity-0'}`}>
                         <input
                             type="text"
-                            className="w-1/2 mintf:w-[150px] mintf:h-[35px] p200:ml-[30px] p200:-mr-[10px] minn:w-[350px] minn:h-[50px] py-2.5 px-4 border bg-white focus:outline-none"
+                            className={`w-1/2 mintf:w-[150px] mintf:h-[35px] p200:ml-[30px] p200:-mr-[10px] minn:w-[350px] minn:h-[50px] py-2.5 px-4 border bg-white focus:outline-none ${!userInfo && !cookies.jwt ? "hidden" : ""}`}
                             value={searchData}
                             onChange={(e) => setSearchData(e.target.value)}
                             placeholder="What service are you looking for today?"
                         />
                         <button
-                            className="bg-gray-900 py-1.5 mintf:w-[45px] mintf:h-[35px] minn:h-[50px] minn:w-[65px] text-white w-12 md:w-16 xl:w-20 flex justify-center items-center"
+                            className={`bg-gray-900 py-1.5 mintf:w-[45px] mintf:h-[35px] minn:h-[50px] minn:w-[65px] text-white w-12 md:w-16 xl:w-20 flex justify-center items-center ${!userInfo && !cookies.jwt ? "hidden" : ""}`}
                             onClick={() => {
                                 setSearchData('');
                                 router.push(`/search?q=${searchData}`);
@@ -162,10 +148,10 @@ const Navbar = () => {
                         </button>
                     </div>
                     {!userInfo ? (
-                        <ul className="md:flex gap-6 items-center">
+                        <ul className="flex gap-6 items-center w-full justify-end">
                             {links.map(({ linkName, handler, type }) => {
                                 return (
-                                    <li key={linkName} className={`${isFixed ? 'text-base' : 'text-white'} font-medium`}>
+                                    <li key={linkName} className={`${isFixed ? 'text-base' : ''} font-medium`}>
                                         {type === 'link' && <Link href={handler}>{linkName}</Link>}
                                         {type === 'button' && <button onClick={handler}>{linkName}</button>}
                                         {type === 'button2' && (
@@ -173,7 +159,7 @@ const Navbar = () => {
                                                 onClick={handler}
                                                 className={`border text-md font-semibold py-1 px-3 rounded-sm ${isFixed
                                                     ? 'border-[#1dbf73] text-[#1dbf73]'
-                                                    : 'border-white text-white'
+                                                    : ''
                                                     } hover:bg-[#1dbf73] hover:text-white hover:border-[#1dbf73] transition-all duration-500`}
                                             >
                                                 {linkName}
