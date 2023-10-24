@@ -11,6 +11,7 @@ import axios from 'axios';
 import { GET_USER_INFO, HOST } from '@/utils/constants';
 import { reducerCases } from '@/context/constants';
 import Image from 'next/image';
+import ContextMenu from './ContextMenu';
 
 const Navbar = () => {
     const router = useRouter()
@@ -64,7 +65,7 @@ const Navbar = () => {
     ];
 
     useEffect(() => {
-        if (cookies.jwt && !userInfo) {
+        if (cookies.jwt &&  !userInfo) {
             const getUserInfo = async () => {
                 try {
                     const {
@@ -100,6 +101,40 @@ const Navbar = () => {
             setIsLoaded(true)
         }
     }, [cookies, userInfo])
+    const [isContextMenuVisible, setIsContextMenuVisible] = useState(false);
+    useEffect(() => {
+        const clickListener = (e) => {
+            e.stopPropagation();
+
+            if (isContextMenuVisible) setIsContextMenuVisible(false);
+        };
+        if (isContextMenuVisible) {
+            window.addEventListener("click", clickListener);
+        }
+        return () => {
+            window.removeEventListener("click", clickListener);
+        };
+    }, [isContextMenuVisible]);
+    const ContextMenuData = [
+        {
+            name: "Profile",
+            callback: (e) => {
+                e.stopPropagation();
+
+                setIsContextMenuVisible(false);
+                router.push("/profile");
+            },
+        },
+        {
+            name: "Logout",
+            callback: (e) => {
+                e.stopPropagation();
+
+                setIsContextMenuVisible(false);
+                router.push("/logout");
+            },
+        },
+    ];
 
     const handleOrdersNavigate = () => {
         if (isSeller) router.push("/seller/orders");
@@ -191,11 +226,11 @@ const Navbar = () => {
                             <Link href={"http://localhost:3000/logout"} className="cursor-pointer font-sm text-red-700">
                                 {logout}
                             </Link>
-                            <Link href={"http://localhost:3000/profile"}>
                                 <li
                                     className="cursor-pointer -mr-2 md:mr-0"
                                     onClick={(e) => {
                                         e.stopPropagation();
+                                        setIsContextMenuVisible(true);
                                     }}
                                     title="Profile"
                                 >
@@ -213,9 +248,9 @@ const Navbar = () => {
                                         </div>
                                     )}
                                 </li>
-                            </Link>
                         </ul>
                     )}
+                    {isContextMenuVisible && <ContextMenu data={ContextMenuData} />}
                 </nav>
             )
             }

@@ -1,5 +1,5 @@
 import { useStateProvider } from "@/context/StateContext";
-import { GET_SELLER_DASHBOARD_DATA, HOST } from "@/utils/constants";
+import {GET_SELLER_DASHBOARD_DATA, GET_USER_INFO, HOST} from "@/utils/constants";
 import axios from "axios";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -28,7 +28,7 @@ function Index() {
     <div className="w-[100%]">
       {userInfo && (
         <div className="grid p200:grid-cols-1 w-[90%] p200:w mx-auto maxn:grid-cols-2 p200:gap-10 min-h-[80vh] my-10 mt-0 gap-5">
-          <div className="shadow-md h-max p-10 flex flex-col gap-5">,
+          <div className="shadow-md h-max p-10 flex flex-col gap-5">
             <div className="flex gap-5 justify-center items-center">
               <div>
                 {userInfo?.imageName ? (

@@ -61,7 +61,7 @@ function HeroBanner() {
                 />
             </div>
             <div className="z-10 relative p200:mx-auto minn:left-[-190px] p200:top-[160px] minn:top-0 maxn:left-[-340px] w-[650px] flex justify-center flex-col h-full gap-5 ml-20">
-                <h1 className="p200:opacity-0 minn:opacity-100 text-white text-5xl leading-snug">
+                <h1 className="p200:opacity-0 minn:opacity-100 text-white text-5xl">
                     Find the perfect&nbsp;
                     <i>freelance</i>
                     <br />
