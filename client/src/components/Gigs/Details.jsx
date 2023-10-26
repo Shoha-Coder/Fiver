@@ -93,7 +93,7 @@ const Details = () => {
                     key={image}
                     onClick={() => setCurrentImage(image)}
                     className={`${currentImage === image ? "" : "blur-sm"
-                      } cursor-pointer transition-all duration-500`}
+                      } cursor-pointer transition-all duration-500 h-[90px]`}
                   />
                 ))}
             </div>
@@ -154,10 +154,10 @@ const Details = () => {
                     ))}
                   </div>
                   <span className="text-yellow-500">
-                    {gigData.averageRating}
+                    {gigData?.averageRating ? " " : ""}
                   </span>
                   <span className="text-[#74767e]">
-                    ({gigData.totalReviews})
+                    ({gigData?.totalReviews ? "" : ""})
                   </span>
                 </div>
               </div>

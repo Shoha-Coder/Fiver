@@ -138,7 +138,7 @@ const Navbar = () => {
 
     const handleOrdersNavigate = () => {
         if (isSeller) router.push("/seller/orders");
-        router.push("/buyer/orders")
+        else router.push("/buyer/orders")
     }
     const handleModeSwitch = () => {
         if (isSeller) {
@@ -167,13 +167,13 @@ const Navbar = () => {
                     <div className={`flex ${isFixed || userInfo ? 'opacity-100' : 'opacity-0'}`}>
                         <input
                             type="text"
-                            className={`w-1/2 mintf:w-[150px] mintf:h-[35px] p200:ml-[30px] p200:-mr-[10px] minn:w-[350px] minn:h-[50px] py-2.5 px-4 border bg-white focus:outline-none ${!userInfo && !cookies.jwt ? "hidden" : ""}`}
+                            className={`w-1/2 mintf:w-[150px] p200  p200:opacity-0 maxtf:opacity-100 p200:ml-[30px] p200:-mr-[10px] minn:w-[350px] minn:h-[50px] py-2.5 px-4 border bg-white focus:outline-none ${!userInfo && !cookies.jwt ? "hidden" : ""}`}
                             value={searchData}
                             onChange={(e) => setSearchData(e.target.value)}
                             placeholder="What service are you looking for today?"
                         />
                         <button
-                            className={`bg-gray-900 py-1.5 mintf:w-[45px] mintf:h-[35px] minn:h-[50px] minn:w-[65px] text-white w-12 md:w-16 xl:w-20 flex justify-center items-center ${!userInfo && !cookies.jwt ? "hidden" : ""}`}
+                            className={`bg-gray-900 py-1.5 mintf:w-[45px] p200  p200:opacity-0 maxtf:opacity-100 minn:h-[50px] minn:w-[65px] text-white w-12 md:w-16 xl:w-20 flex justify-center items-center ${!userInfo && !cookies.jwt ? "hidden" : ""}`}
                             onClick={() => {
                                 setSearchData('');
                                 router.push(`/search?q=${searchData}`);
